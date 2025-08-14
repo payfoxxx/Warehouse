@@ -1,0 +1,85 @@
+.directory-container {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.directory-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.directory-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.add-button, .archive-toggle-button {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background-color 0.3s;
+}
+
+.add-button {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.add-button:hover {
+    background-color: #45A049;
+}
+
+.archive-togge-button {
+    background-color: #F0AD4E;
+    color: white;
+}
+
+.archive-togge-button:hover {
+    background-color: #EC971F;
+}
+
+.directory-table {
+    width: 100%;
+    border-collapse: collapse;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 1);
+}
+
+.directory-table th,
+.directory-table td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #E0E0E0;
+}
+
+.directory-table th {
+    background-color: #F5F7FA;
+    font-weight: 600;
+}
+
+.directory-table tr:hover {
+    background-color: #F9F9F9;
+}
+
+.loading-indicator,
+.error-message,
+.no-data {
+    padding: 20px;
+    text-align: center;
+    font-size: 18px;
+    color: #666;
+    background-color: #F8F9FA;
+    border-radius: 4px;
+    margin-top: 20px;
+}
+
+.error-message {
+    color: #D32F2F;
+    background-color: #FFEBEE;
+}

@@ -1,0 +1,206 @@
+/* .modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background: white;
+    padding: 20px;
+    border-radius: 5px;
+    width: 300px;
+}
+
+.modal-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.state-selection {
+    margin: 15px 0;
+}
+
+.modal-content table {
+    width: 100%;
+    margin: 15px 0;
+}
+
+.modal-content table th {
+    background-color: #F2F2F2;
+} */
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3 ease;
+}
+
+.error-modal-overlay {
+    z-index: 1001;
+}
+
+.modal-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal {
+    background: white;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 500px;
+    max-height: 90vh;
+    overflow-y: auto;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    transform: translateY(20px);
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.modal-overlay.active .modal {
+    transform: translateY(0);
+}
+
+.modal-close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #666;
+    transition: color 0.2s;
+}
+
+.modal-close:hover {
+    color: #333;
+}
+
+.modal-content {
+    padding: 30px;
+}
+
+.modal-header {
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #EEE;
+}
+
+.modal-header h2 {
+    margin: 0;
+    color: #2C3E50;
+    font-size: 1.5rem;
+}
+
+.modal-body {
+    margin-bottom: 25px;
+}
+
+.modal-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    padding-top: 15px;
+    border-top: 1px solid #EEE;
+}
+
+.modal-body {
+    margin-bottom: 25px;
+}
+
+.modal-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    padding-top: 15px;
+    border-top: 1px solid #EEE;
+}
+
+.modal-actions button {
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.modal-actions .cancel-btn {
+    background-color: #F5F5F5;
+    border: 1px solid #DDD;
+    color: #333;
+}
+
+.modal-actions .cancel-btn:hover {
+    background-origin: #EAEAEA;
+}
+
+.modal-actions .confirm-btn {
+    background-color: #3498DB;
+    border: 1px solid #2980B9;
+    color: white;
+}
+
+.modal-actions .confirm-btn:hover {
+    background-color: #2980B9;
+}
+
+.modal-content table {
+    width: 100%;
+    margin: 15px 0;
+    border-collapse: collapse;
+}
+
+.modal-content table th {
+    background-color: #F8F9FA;
+    padding: 10px;
+    text-align: left;
+    font-weight: 500;
+}
+
+.modal-content table td {
+    padding: 10px;
+    border-bottom: 1px solid #EEE;
+}
+
+.error-modal .modal-header h2 {
+    color: #E74C3C;
+}
+
+.error-modal .modal-content {
+    border-left: 4px solid #E74C3C;
+}
+
+.error-icon {
+    color: #E74C3C;
+    margin-right: 10px;
+    font-size: 1.2rem;
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    20%, 60% { transform: translateX(-5px); }
+    40%, 80% { transform: translateX(5px); }
+}
+
+.error-modal {
+    animation: shake 0.5s cubic-bezier(.36,.07,.19,.97) both;
+}
+
